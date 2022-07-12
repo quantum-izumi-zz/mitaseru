@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>sampleサイト</title>
+    <style>
+        .float-button__wrap {
+            width: auto;
+            max-width: 80%;
+            min-width: 50%;
+            height: auto;
+            position: fixed;
+            bottom: 10px;
+            right: 0px;
+            z-index: 1;
+        }
+        img {
+            width:auto;
+            max-width: 100%;
+            min-width: 50%;
+            height: auto;
+        }
+        iframe[src^="https://docs.google.com/forms/d/e"]{
+            width:100%;
+        } 
+    </style>
+    <!-- Microsoft Clarity-->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "cqfzps73w4");
+    </script>
+    <!-- googleアナリティクス-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2P6797M5Z4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-2P6797M5Z4');
+    </script>
+    <!-- ボタン押下時の動作-->
+    <script>
+        $('#page-link a[href*="#"]').click(function () {
+        var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+        var pos = $(elmHash).offset().top;  //idの上部の距離を取得
+        $('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+        return false;
+        });
+    </script>
+</head>
+<body>
+    <div class="float-button__wrap" >
+        <a href="#iframe">
+        <img alt="サンプル画像です" src="btn_cv.png"></a>
+    </div>
+    <div style="text-align: center" >
+        <p>
+            <img alt="サンプル画像です" src="mitaseru SP - ALL contents ＋ ボタンなし.png">
+        <p>
+            <section class="area" id="iframe">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScd8BAHdLLHKSpAkg-ZU_Eyx8j1s4-spvHm9BnZlmgFXmqgRA/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        </p>
+    </div> 
+</body>
+</html>
