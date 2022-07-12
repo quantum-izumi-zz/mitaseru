@@ -6,21 +6,21 @@
     <title>sampleサイト</title>
     <style>
         .float-button__wrap {
-            width: auto;
-            height: auto;
             position: fixed;
-            bottom: 0px;
-            right: 0px;
-            z-index: 10;
+            z-index: 20;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: auto;
+            width: 420px;
+            opacity: 1;
             }
         img {
             width:auto;
             max-width: 100%;
             min-width: 50%;
             height: auto;
-            }
-        span {
-            color: #FFE5B4;
             }
         iframe[src^="https://docs.google.com/forms/d/e"]{
             width:100%;
@@ -52,31 +52,19 @@
         return false;
         });
     </script>
-    <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
-    <script>
-        jQuery(function($){
-        $(window).on('scroll', function(){
-            if ($(window).scrollTop() > 300) {
-            $('#iframe').fadeIn(400);
-            } else {
-            $('#iframe').fadeOut(400);
-            }
-        });
-        });
-    </script>
 </head>
 <body>
-    <div class="float-button__wrap">
-        <a href="#iframe" class="demo01__link js-demo01-btn">
+    <div class="float-button__wrap" >
+        <a href="#iframe">
         <img alt="サンプル画像です" src="btn_cv.png"></a>
     </div>
-    <div style="text-align: center" id="demo01__area" class="cont js-demo01-area">
-    <p>
-        <img alt="サンプル画像です" src="mitaseru SP - ALL contents ＋ ボタンなし.png">
-    <p>
-        <section class="area" id="iframe">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScd8BAHdLLHKSpAkg-ZU_Eyx8j1s4-spvHm9BnZlmgFXmqgRA/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-    </p>
+    <div style="text-align: center" >
+        <p>
+            <img alt="サンプル画像です" src="mitaseru SP - ALL contents ＋ ボタンなし.png">
+        <p>
+            <section class="area" id="iframe">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScd8BAHdLLHKSpAkg-ZU_Eyx8j1s4-spvHm9BnZlmgFXmqgRA/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        </p>
     </div> 
 </body>
 </html>
