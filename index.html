@@ -52,18 +52,39 @@
         return false;
         });
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        const headerElement = document.getElementById('button');
+        document.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        if (scrollY > 500) {
+           headerElement.classList.add('active');
+         } else {
+           headerElement.classList.remove('active');
+         }
+        if (document.getElementById('hero').getBoundingClientRect().bottom < 0) {
+            headerElement.classList.add('active');
+        } else {
+            headerElement.classList.remove('active');
+        }
+        });
+    </script>
 </head>
 <body>
-    <div class="float-button__wrap" >
-        <a href="#iframe">
-        <img alt="サンプル画像です" src="btn_cv.png"></a>
-    </div>
+        <!--フローティングボタン-->
+        <div id="button" class="float-button__wrap" >
+            <a href="#iframe">
+            <img alt="サンプル画像です" src="btn_cv.png"></a>
+        </div>
     <div style="text-align: center" >
         <p>
             <img alt="サンプル画像です" src="mitaseru SP - ALL contents ＋ ボタンなし.png">
         <p>
             <section class="area" id="iframe">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScd8BAHdLLHKSpAkg-ZU_Eyx8j1s4-spvHm9BnZlmgFXmqgRA/viewform?embedded=true" width="640" height="454" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        </p>
+        <p>
+            <img alt="サンプル画像です" src="test.png">
         </p>
     </div> 
 </body>
