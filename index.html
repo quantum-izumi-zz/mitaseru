@@ -2,14 +2,15 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>sampleサイト</title>
     <style>
         .float-button__wrap {
             width: 400px;
-            height: 90px;
+            height: 100px;
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            bottom: 50px;
+            right: 50px;
             z-index: 10;
             }
         .float-button__wrap a {
@@ -20,9 +21,9 @@
             height: 100%;
             text-align: center;
             text-decoration: none;
-            background-color: #261F1F ;
+            background-color: #261F1F ; 
             color: #fff;
-            }
+            } 
         img {
             width:auto;
             max-width: 100%;
@@ -33,7 +34,7 @@
             }
         iframe[src^="https://docs.google.com/forms/d/e"]{
             width:100%;
-            }
+            } 
     </style>
     <!-- Microsoft Clarity-->
     <script type="text/javascript">
@@ -61,13 +62,25 @@
         return false;
         });
     </script>
+    <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script>
+        jQuery(function($){
+        $(window).on('scroll', function(){
+            if ($(window).scrollTop() > 300) {
+            $('#iframe').fadeIn(400);
+            } else {
+            $('#iframe').fadeOut(400);
+            }
+        });
+        });
+    </script>
 </head>
 <body>
     <div class="float-button__wrap">
-        <a href="#iframe">
+        <a href="#iframe" class="demo01__link js-demo01-btn">
         <img alt="サンプル画像です" src="btn_cv.png"></a>
     </div>
-    <div style="text-align: center">
+    <div style="text-align: center" id="demo01__area" class="cont js-demo01-area">
     <p>
         <img alt="サンプル画像です" src="mitaseru SP - ALL contents ＋ ボタンなし.png">
     <p>
